@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="d-flex justify-content-center mt-5">
+    <form (ngSubmit)="onSub()" [formGroup]="contactForm" novalidate>
+      <div class="form-group mb-2">
+        <label for="firstName">Förnamn</label>
+        <input type="text" class="form-control" id="firstName" formControlName="firstName" [ngClass]="{ 'is-invalid': submitted && controls.firstName.errors }">
+        <div *ngIf="submitted && controls.firstName.errors" class="invalid-feedback">
+          <div *ngIf="controls.firstName.errors.required">Ange ett förnamn</div>
+          <div *ngIf="controls.firstName.errors.minlength">Namnet måste vara minst 2 bokstäver</div>
+          <div *ngIf="controls.firstName.errors.pattern">Ange ett giltigt namn</div>
+        </div>
+      </div>
+      <div class="form-group mb-2">
+        <label for="lastName">Efternamn</label>
+        <input type="text" class="form-control" id="lastName" formControlName="lastName" [ngClass]="{ 'is-invalid': submitted && controls.lastName.errors }">
+        <div *ngIf="submitted && controls.lastName.errors" class="invalid-feedback">
+          <div *ngIf="controls.lastName.errors.required">Ange ett efternamn</div>
+          <div *ngIf="controls.lastName.errors.minlength">Namnet måste vara minst 2 bokstäver</div>
+          <div *ngIf="controls.lastName.errors.pattern">Ange ett giltigt namn</div>
+        </div>
+      </div>
+      <div class="form-group mb-2">
+        <label for="email">Email address</label>
+        <input type="email" class="form-control" id="email" formControlName="email" [ngClass]="{ 'is-invalid': submitted && controls.email.errors }">
+        <div *ngIf="submitted && controls.email.errors" class="invalid-feedback">
+          <div *ngIf="controls.email.errors.required">Ange en email</div>
+          <div *ngIf="controls.email.errors.email">Ange en giltigt email</div>
+        </div>
+      </div>
+      <div class="form-group mb-2">
+        <label for="subject">Ämne</label>
+        <input type="text" class="form-control" id="subject" formControlName="subject" [ngClass]="{ 'is-invalid': submitted && controls.subject.errors }">
+        <div *ngIf="submitted && controls.subject.errors" class="invalid-feedback">
+          <div *ngIf="controls.subject.errors.required">Ange ett ämne</div>
+          <div *ngIf="controls.subject.errors.minlength">Ämnet måste vara minst 3 bokstäver</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="message">Meddelande</label>
+        <textarea class="form-control" id="message" rows="3" formControlName="message" [ngClass]="{ 'is-invalid': submitted && controls.message.errors }"></textarea>
+        <div *ngIf="submitted && controls.message.errors" class="invalid-feedback">
+          <div *ngIf="controls.message.errors.required">Lämna ett meddalnde</div>
+          <div *ngIf="controls.message.errors.minlength">Meddelandet måste vara minst 10 bokstäver</div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-success px-4 my-2" [disabled]="!contactForm.valid">Skicka</button>
+    </form>
+  </div>
+
+</div>

@@ -1,0 +1,12 @@
+form {
+  width: 400px;
+}
+
+textarea {
+  resize: none;
+  height: 150px;
+}
+
+button {
+  border-radius: 20px;
+}

@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+html, body {
+  background-color: #F2F2F2;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  max-width: 900px;
+}
+
+h3 {
+  font-weight: bold;
+}
